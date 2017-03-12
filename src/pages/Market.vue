@@ -4,7 +4,7 @@
       <div class="col-sm-6 col-md-4" v-for='item in items'>
           <div class="thumbnail">
             <router-link :to='{name: "MarketBuy"}'>
-              <img src="http://placehold.it/350x200" alt="">
+              <img :src='"static/img/" + item.image' alt="">
             </router-link>
             <div class="caption">
               <h3>{{ item.name }}</h3>
@@ -28,49 +28,17 @@
 </template>
 
 <script>
+import store from 'store'
+
 export default {
   name: '',
   data () {
     return {
-      items: [
-        {
-          image: '',
-          name: '美術品01',
-          lowestPrice: '1000',
-          time: '1日'
-        },
-        {
-          image: '',
-          name: '美術品01',
-          lowestPrice: '1000',
-          time: '1日'
-        },
-        {
-          image: '',
-          name: '美術品01',
-          lowestPrice: '1000',
-          time: '1日'
-        },
-        {
-          image: '',
-          name: '美術品01',
-          lowestPrice: '1000',
-          time: '1日'
-        },
-        {
-          image: '',
-          name: '美術品01',
-          lowestPrice: '1000',
-          time: '1日'
-        },
-        {
-          image: '',
-          name: '美術品01',
-          lowestPrice: '1000',
-          time: '1日'
-        }
-      ]
+      items: []
     }
+  },
+  created () {
+    this.items = store.get('items')
   }
 }
 </script>

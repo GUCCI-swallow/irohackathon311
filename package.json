@@ -10,6 +10,8 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "store": "^2.0.4",
     "vue": "^2.2.2",
     "vue-router": "^2.2.0"
   },

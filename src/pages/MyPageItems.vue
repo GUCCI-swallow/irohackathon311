@@ -7,7 +7,7 @@
     </ul>
     <div class="tab-content">
       <div class='row item' v-for='item in items'>
-        <img class='responsive-img col-md-4' src="http://placehold.it/350x200" alt="">
+        <img class='responsive-img col-md-4' :src="'static/img/' + item.image" alt="">
         <div class="col-md-4 content-name">
           <table class='table'>
             <tr>
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import s from 'store'
+
 export default {
   name: '',
   data () {
@@ -50,6 +52,9 @@ export default {
         }
       ]
     }
+  },
+  created () {
+    this.items = s.get('items')
   },
   methods: {
     sell: function (e) {

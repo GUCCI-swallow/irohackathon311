@@ -1,6 +1,7 @@
 <template>
   <div class='container'>
     <div class="image-display">
+
     </div>
     <form class='form-holizontal col-md-offset-3 col-md-6'>
       <div class="form-group">

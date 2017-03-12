@@ -2,17 +2,17 @@
   <div class='container'>
     <div class="row">
       <div class="col-md-6">
-        <img src="http://placehold.it/350x200" alt="">
-        <h3>コンテンツ名</h3>
+        <img :src="'static/img/' + item.image" alt="" style='width: 100%;'>
+        <h3>{{ item.name }}</h3>
         <table class="table">
           <tbody>
             <tr>
               <th>最低販売金額</th>
-              <td>1000円</td>
+              <td>{{ item.lowestPrice }}</td>
             </tr>
             <tr>
               <th>残り時間</th>
-              <td>1日</td>
+              <td>{{ item.time }}</td>
             </tr>
           </tbody>
         </table>
@@ -24,12 +24,12 @@
           </thead>
           <tbody>
             <tr>
-              <td>Aさん</td>
-              <td>Bさん</td>
+              <td>user001</td>
+              <td>user002</td>
             </tr>
             <tr>
-              <td>Bさん</td>
-              <td>Dさん</td>
+              <td>user003</td>
+              <td>user001</td>
             </tr>
           </tbody>
         </table>
@@ -37,17 +37,17 @@
       <div class="col-md-6">
         <form class='form-holizontal'>
           <div class="form-group">
-            <input type="number" name="" class='form-control' placeholder='入札額'>
+            <input type="number" name="" class='form-control' placeholder='入札額' v-model='price'>
           </div>
           <table class="table table-bordered table-center">
             <tbody>
               <tr>
                 <th>作家への還元金額</th>
-                <td>50円</td>
+                <td>{{ price * 0.05}} 円　</td>
               </tr>
               <tr>
                 <th>出品者への金額</th>
-                <td>950円</td>
+                <td>{{ price * 0.95}}円</td>
               </tr>
             </tbody>
           </table>
@@ -71,11 +71,19 @@
 </template>
 
 <script>
+import store from 'store'
+
 export default {
   name: '',
   data () {
     return {
+      item: {},
+      price: 0
     }
+  },
+  created () {
+    const item = store.get('items')
+    this.item = item[0]
   },
   methods: {
     buy: function (e) {
