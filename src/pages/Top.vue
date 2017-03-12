@@ -52,26 +52,7 @@ export default {
           creator: 'user001',
           lowestPrice: 10000,
           time: '1日',
-
           isMine: true
-        },
-        {
-          name: '美術品3',
-          image: 'image4.JPG',
-          owner: 'user001',
-          creator: 'user001',
-          lowestPrice: 5000,
-          time: '1週間',
-          isMine: true
-        },
-        {
-          name: '美術品4',
-          image: 'image5.JPG',
-          owner: 'user001',
-          creator: 'user001',
-          lowestPrice: 5000,
-          time: '1時間',
-          isMine: false
         }
       ]
 

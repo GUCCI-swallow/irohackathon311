@@ -7,7 +7,7 @@
     </ul>
     <div class="tab-content">
       <div class='row item' v-for='item in items'>
-        <img class='responsive-img col-md-4' :src="'static/img/' + item.image" alt="">
+        <img class='responsive-img col-md-4' :src="'static/img/' + item.image" alt="" style='300px;'>
         <div class="col-md-4 content-name">
           <table class='table'>
             <tr>
